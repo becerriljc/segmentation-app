@@ -1,34 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useDropzone } from 'react-dropzone'
+
 import './App.scss'
 
 function App() {
-    const [ count, setCount ] = useState( 0 )
+    const { getRootProps, getInputProps, acceptedFiles } = useDropzone( {
+        noClick: true,
+        accept: {
+            'image/png': [ '.jpg', '.jpeg' ],
+        },
+    } )
+    const files = acceptedFiles.map( file => <li key={file.path}>{file.path}</li> )
 
     return (
-        <>
-            <div>
-                <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-                    <img src={viteLogo} className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank' rel='noreferrer'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
+        <section className='container'>
+            <div {...getRootProps( { className: 'dropzone' } ) }>
+                <input {...getInputProps()} />
+                <p>Dropzone without click events</p>
             </div>
-            <h1>Vite + React</h1>
-            <div className='card'>
-                <button onClick={() => setCount( ( count ) => count + 1 )}>
-          count is {count}
-                </button>
-                <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-            </p>
-        </>
+            <aside>
+                <h4>Files</h4>
+                <ul>{files}</ul>
+            </aside>
+        </section>
     )
 }
 
