@@ -1,0 +1,55 @@
+{
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@apis/*": [
+                "./src/apis/*"
+            ],
+            "@images/*": [
+                "./src/assets/images/*"
+            ],
+            "@sounds/*": [
+                "./src/assets/sounds/*"
+            ],
+            "@components/*": [
+                "./src/components/*"
+            ],
+            "@constants/*": [
+                "./src/constants/*"
+            ],
+            "@context/*": [
+                "./src/context/*"
+            ],
+            "@hooks/*": [
+                "./src/hooks/*"
+            ],
+            "@layouts/*": [
+                "./src/layouts/*"
+            ],
+            "@pages/*": [
+                "./src/pages/*"
+            ],
+            "@redux/*": [
+                "./src/redux/*"
+            ],
+            "@routes/*": [
+                "src/router/*"
+            ],
+            "@styles/*": [
+                "./src/styles/*"
+            ],
+            "@types/*": [
+                "./src/types/*"
+            ],
+            "@utils/*": [
+                "./src/utils/*"
+            ],
+            "@data/*": [
+                "./src/data/*"
+            ]
+        }
+    }
+}
