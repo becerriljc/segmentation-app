@@ -3,9 +3,10 @@ section {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto', sans-serif;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
 }
 
 .dropzone {
@@ -19,6 +20,17 @@ section {
     border-color: #eeeeee;
     border-style: dashed;
     background-color: #bdbdbd;
+    outline: none;
+    transition: border .24s ease-in-out;
+}
+
+.image {
+    align-items: center;
+    padding: 20px;
+    border-width: 2px;
+    border-radius: 2px;
+    border-style: dashed;
+    background-color: #fafafa;
     outline: none;
     transition: border .24s ease-in-out;
 }
